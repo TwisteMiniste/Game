@@ -1,100 +1,338 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.mr_alex.mygame.playerVSplayer">
 
-    <EditText
-        android:id="@+id/etPlayer1"
-        android:layout_width="290dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/bControl1"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="dfjfdj" />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:rotation="180">
 
-    <Button
-        android:id="@+id/bControl1"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="46dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="16dp"
-        android:onClick="onClick"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/etPlayer1" />
+        <TextView
+            android:id="@+id/tvPlayer_2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/etPlayer_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvPlayer1"
-        android:layout_width="320dp"
-        android:layout_height="190dp"
-        android:layout_marginBottom="22dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginStart="32dp"
-        android:text="djuhdrtuj"
-        app:layout_constraintBottom_toTopOf="@+id/bControl1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/etPlayer_2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPlayer_2" />
 
-    <TextView
-        android:id="@+id/tvPlayer2"
-        android:layout_width="320dp"
-        android:layout_height="190dp"
-        android:layout_marginBottom="19dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginStart="32dp"
-        android:rotation="180"
-        android:text="dfshsdfh"
-        app:layout_constraintBottom_toTopOf="@+id/tvPlayer1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/num_1_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/num_1"
+            app:layout_constraintBottom_toTopOf="@+id/num_5_"
+            app:layout_constraintEnd_toStartOf="@+id/num_2_"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPlayer_2" />
 
-    <EditText
-        android:id="@+id/etPlayer2"
-        android:layout_width="290dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="22dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
-        android:inputType="number"
-        android:rotation="180"
-        app:layout_constraintBottom_toTopOf="@+id/tvPlayer2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/bControl2"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="dfjfdj" />
+        <Button
+            android:id="@+id/num_2_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/num_2"
+            app:layout_constraintBottom_toTopOf="@+id/num_6_"
+            app:layout_constraintEnd_toStartOf="@+id/num_3_"
+            app:layout_constraintStart_toEndOf="@+id/num_1_"
+            app:layout_constraintTop_toBottomOf="@+id/etPlayer_2" />
 
-    <Button
-        android:id="@+id/bControl2"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="46dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="22dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:rotation="180"
-        android:onClick="onClick"
-        app:layout_constraintBottom_toTopOf="@+id/tvPlayer2"
-        app:layout_constraintEnd_toStartOf="@+id/etPlayer2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/num_3_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/num_3"
+            app:layout_constraintBottom_toTopOf="@+id/num_7_"
+            app:layout_constraintEnd_toStartOf="@+id/num_4_"
+            app:layout_constraintStart_toEndOf="@+id/num_2_"
+            app:layout_constraintTop_toBottomOf="@+id/etPlayer_2" />
 
-</android.support.constraint.ConstraintLayout>
+        <Button
+            android:id="@+id/num_4_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/num_4"
+            app:layout_constraintBottom_toTopOf="@+id/num_8_"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/num_3_"
+            app:layout_constraintTop_toBottomOf="@+id/etPlayer_2" />
+
+        <Button
+            android:id="@+id/num_5_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:text="@string/num_5"
+            app:layout_constraintBottom_toTopOf="@+id/num_9_"
+            app:layout_constraintEnd_toStartOf="@+id/num_6_"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/num_1_" />
+
+        <Button
+            android:id="@+id/num_6_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/num_6"
+            app:layout_constraintBottom_toTopOf="@+id/num_0_"
+            app:layout_constraintEnd_toStartOf="@+id/num_7_"
+            app:layout_constraintStart_toEndOf="@+id/num_5_"
+            app:layout_constraintTop_toBottomOf="@+id/num_2_" />
+
+        <Button
+            android:id="@+id/num_7_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/num_7"
+            app:layout_constraintBottom_toTopOf="@+id/num_delete_"
+            app:layout_constraintEnd_toStartOf="@+id/num_8_"
+            app:layout_constraintStart_toEndOf="@+id/num_6_"
+            app:layout_constraintTop_toBottomOf="@+id/num_3_" />
+
+        <Button
+            android:id="@+id/num_8_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/num_8"
+            app:layout_constraintBottom_toTopOf="@+id/num_enter_"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/num_7_"
+            app:layout_constraintTop_toBottomOf="@+id/num_4_" />
+
+        <Button
+            android:id="@+id/num_9_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:text="@string/num_9"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/num_0_"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/num_5_" />
+
+        <Button
+            android:id="@+id/num_0_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/num_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/num_delete_"
+            app:layout_constraintStart_toEndOf="@+id/num_9_"
+            app:layout_constraintTop_toBottomOf="@+id/num_6_" />
+
+        <Button
+            android:id="@+id/num_delete_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/num_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/num_enter_"
+            app:layout_constraintStart_toEndOf="@+id/num_0_"
+            app:layout_constraintTop_toBottomOf="@+id/num_7_" />
+
+        <Button
+            android:id="@+id/num_enter_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/num_enter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/num_delete_"
+            app:layout_constraintTop_toBottomOf="@+id/num_8_" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tvPlayer_1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/etPlayer_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/etPlayer_1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPlayer_1" />
+
+        <Button
+            android:id="@+id/num_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/num_1"
+            app:layout_constraintBottom_toTopOf="@+id/num_5"
+            app:layout_constraintEnd_toStartOf="@+id/num_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPlayer_1" />
+
+        <Button
+            android:id="@+id/num_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/num_2"
+            app:layout_constraintBottom_toTopOf="@+id/num_6"
+            app:layout_constraintEnd_toStartOf="@+id/num_3"
+            app:layout_constraintStart_toEndOf="@+id/num_1"
+            app:layout_constraintTop_toBottomOf="@+id/etPlayer_1" />
+
+        <Button
+            android:id="@+id/num_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/num_3"
+            app:layout_constraintBottom_toTopOf="@+id/num_7"
+            app:layout_constraintEnd_toStartOf="@+id/num_4"
+            app:layout_constraintStart_toEndOf="@+id/num_2"
+            app:layout_constraintTop_toBottomOf="@+id/etPlayer_1" />
+
+        <Button
+            android:id="@+id/num_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/num_4"
+            app:layout_constraintBottom_toTopOf="@+id/num_8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/num_3"
+            app:layout_constraintTop_toBottomOf="@+id/etPlayer_1" />
+
+        <Button
+            android:id="@+id/num_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:text="@string/num_5"
+            app:layout_constraintBottom_toTopOf="@+id/num_9"
+            app:layout_constraintEnd_toStartOf="@+id/num_6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/num_1" />
+
+        <Button
+            android:id="@+id/num_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/num_6"
+            app:layout_constraintBottom_toTopOf="@+id/num_0"
+            app:layout_constraintEnd_toStartOf="@+id/num_7"
+            app:layout_constraintStart_toEndOf="@+id/num_5"
+            app:layout_constraintTop_toBottomOf="@+id/num_2" />
+
+        <Button
+            android:id="@+id/num_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/num_7"
+            app:layout_constraintBottom_toTopOf="@+id/num_delete"
+            app:layout_constraintEnd_toStartOf="@+id/num_8"
+            app:layout_constraintStart_toEndOf="@+id/num_6"
+            app:layout_constraintTop_toBottomOf="@+id/num_3" />
+
+        <Button
+            android:id="@+id/num_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/num_8"
+            app:layout_constraintBottom_toTopOf="@+id/num_enter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/num_7"
+            app:layout_constraintTop_toBottomOf="@+id/num_4" />
+
+        <Button
+            android:id="@+id/num_9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:text="@string/num_9"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/num_0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/num_5" />
+
+        <Button
+            android:id="@+id/num_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/num_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/num_delete"
+            app:layout_constraintStart_toEndOf="@+id/num_9"
+            app:layout_constraintTop_toBottomOf="@+id/num_6" />
+
+        <Button
+            android:id="@+id/num_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/num_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/num_enter"
+            app:layout_constraintStart_toEndOf="@+id/num_0"
+            app:layout_constraintTop_toBottomOf="@+id/num_7" />
+
+        <Button
+            android:id="@+id/num_enter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/num_enter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/num_delete"
+            app:layout_constraintTop_toBottomOf="@+id/num_8" />
+
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>

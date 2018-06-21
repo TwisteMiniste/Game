@@ -24,7 +24,7 @@ public class playerVSplayer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.player_vs_player);
 
-        tvPlayer1 = findViewById(R.id.tvPlayer1);
+        tvPlayer1 = findViewById(R.id.tvPlayer_1);
         tvPlayer2 = findViewById(R.id.tvPlayer2);
         etPlayer1 = findViewById(R.id.etPlayer1);
         etPlayer2 = findViewById(R.id.etPlayer2);
