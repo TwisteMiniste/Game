@@ -1,3 +1,29 @@
 <resources>
-    <string name="app_name">MyGame</string>
+    <string name="app_name">Угадай число</string>
+    <string name="less_than_input">Загаданное число меньше вводимого</string>
+    <string name="greater_than_input">Загаданное число больше вводимого</string>
+    <string name="win">Ты выиграл!</string>
+    <string name="lose">Ты проиграл!</string>
+    <string name="input_value">Введи число</string>
+    <string name="play_again">Хочу сыграть ещё</string>
+    <string name="difficulty_easy">Угадай число от 1 до 100</string>
+    <string name="difficulty_normal">Угадай число от 1 до 1000</string>
+    <string name="difficulty_hard">Угадай число от 1 до 10000</string>
+    <string name="error">самсынг вронг</string>
+    <string name="button_begin">Начать</string>
+    <string name="comp_input">Компьютер ввел число: </string>
+    <string name="comp_less_than_input">Компьютер ввел число меньше загаданного</string>
+    <string name="comp_greater_than_input">Компьютер ввел число больше загаданного</string>
+    <string name="comp_win">Компьютер выиграл</string>
+    <string name="player1_empty">Введите число</string>
+    <string name="player2_empty">Введите число</string>
+    <string name="player1_win">Ты победил! Нажми кнопку и сыграй еще раз</string>
+    <string name="player2_win">Ты победил! Нажми кнопку и сыграй еще раз</string>
+    <string name="player1_lose">Ты проигал! Нажми кнопку и возьми реванш!</string>
+    <string name="player2_lose">Ты проигал! Нажми кнопку и возьми реванш!</string>
+    <string-array name="difficulty">
+        <item>easy</item>
+        <item>normal</item>
+        <item>hard</item>
+    </string-array>
 </resources>

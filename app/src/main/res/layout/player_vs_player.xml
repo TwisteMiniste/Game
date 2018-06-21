@@ -4,6 +4,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".playerVSplayer">
+    tools:context="com.example.mr_alex.mygame.playerVSplayer">
+
+    <EditText
+        android:id="@+id/etPlayer1"
+        android:layout_width="290dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bControl1"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="dfjfdj" />
+
+    <Button
+        android:id="@+id/bControl1"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etPlayer1" />
+
+    <TextView
+        android:id="@+id/tvPlayer1"
+        android:layout_width="320dp"
+        android:layout_height="190dp"
+        android:layout_marginBottom="22dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginStart="32dp"
+        android:text="djuhdrtuj"
+        app:layout_constraintBottom_toTopOf="@+id/bControl1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPlayer2"
+        android:layout_width="320dp"
+        android:layout_height="190dp"
+        android:layout_marginBottom="19dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginStart="32dp"
+        android:rotation="180"
+        android:text="dfshsdfh"
+        app:layout_constraintBottom_toTopOf="@+id/tvPlayer1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etPlayer2"
+        android:layout_width="290dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="22dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:inputType="number"
+        android:rotation="180"
+        app:layout_constraintBottom_toTopOf="@+id/tvPlayer2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bControl2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="dfjfdj" />
+
+    <Button
+        android:id="@+id/bControl2"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="22dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:rotation="180"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toTopOf="@+id/tvPlayer2"
+        app:layout_constraintEnd_toStartOf="@+id/etPlayer2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
