@@ -18,10 +18,10 @@
     <string name="comp_win">Компьютер выиграл</string>
     <string name="player1_empty">Введите число</string>
     <string name="player2_empty">Введите число</string>
-    <string name="player1_win">Ты победил! Нажми кнопку и сыграй еще раз</string>
-    <string name="player2_win">Ты победил! Нажми кнопку и сыграй еще раз</string>
-    <string name="player1_lose">Ты проигал! Нажми кнопку и возьми реванш!</string>
-    <string name="player2_lose">Ты проигал! Нажми кнопку и возьми реванш!</string>
+    <string name="player1_win">Ты победил! Сыграть еще раз?</string>
+    <string name="player2_win">Ты победил! Сыграть еще раз?</string>
+    <string name="player1_lose">Ты проигал! Взять реванш?</string>
+    <string name="player2_lose">Ты проигал! Взять реванш?</string>
     <string-array name="difficulty">
         <item>easy</item>
         <item>normal</item>
