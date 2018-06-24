@@ -105,7 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/num_7"
-            app:layout_constraintBottom_toTopOf="@+id/num_delete_"
+            app:layout_constraintBottom_toTopOf="@+id/button_delete_"
             app:layout_constraintEnd_toStartOf="@+id/num_8_"
             app:layout_constraintStart_toEndOf="@+id/num_6_"
             app:layout_constraintTop_toBottomOf="@+id/num_3_" />
@@ -117,7 +117,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:text="@string/num_8"
-            app:layout_constraintBottom_toTopOf="@+id/num_enter_"
+            app:layout_constraintBottom_toTopOf="@+id/button_enter_"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/num_7_"
             app:layout_constraintTop_toBottomOf="@+id/num_4_" />
@@ -142,23 +142,23 @@
             android:layout_marginBottom="16dp"
             android:text="@string/num_0"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/num_delete_"
+            app:layout_constraintEnd_toStartOf="@+id/button_delete_"
             app:layout_constraintStart_toEndOf="@+id/num_9_"
             app:layout_constraintTop_toBottomOf="@+id/num_6_" />
 
         <Button
-            android:id="@+id/num_delete_"
+            android:id="@+id/button_delete_"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="@string/num_delete"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/num_enter_"
+            app:layout_constraintEnd_toStartOf="@+id/button_enter_"
             app:layout_constraintStart_toEndOf="@+id/num_0_"
             app:layout_constraintTop_toBottomOf="@+id/num_7_" />
 
         <Button
-            android:id="@+id/num_enter_"
+            android:id="@+id/button_enter_"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -167,7 +167,7 @@
             android:text="@string/num_enter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/num_delete_"
+            app:layout_constraintStart_toEndOf="@+id/button_delete_"
             app:layout_constraintTop_toBottomOf="@+id/num_8_" />
 
     </android.support.constraint.ConstraintLayout>
@@ -269,7 +269,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/num_7"
-            app:layout_constraintBottom_toTopOf="@+id/num_delete"
+            app:layout_constraintBottom_toTopOf="@+id/button_delete"
             app:layout_constraintEnd_toStartOf="@+id/num_8"
             app:layout_constraintStart_toEndOf="@+id/num_6"
             app:layout_constraintTop_toBottomOf="@+id/num_3" />
@@ -281,7 +281,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:text="@string/num_8"
-            app:layout_constraintBottom_toTopOf="@+id/num_enter"
+            app:layout_constraintBottom_toTopOf="@+id/button_enter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/num_7"
             app:layout_constraintTop_toBottomOf="@+id/num_4" />
@@ -306,23 +306,23 @@
             android:layout_marginBottom="16dp"
             android:text="@string/num_0"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/num_delete"
+            app:layout_constraintEnd_toStartOf="@+id/button_delete"
             app:layout_constraintStart_toEndOf="@+id/num_9"
             app:layout_constraintTop_toBottomOf="@+id/num_6" />
 
         <Button
-            android:id="@+id/num_delete"
+            android:id="@+id/button_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="@string/num_delete"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/num_enter"
+            app:layout_constraintEnd_toStartOf="@+id/button_enter"
             app:layout_constraintStart_toEndOf="@+id/num_0"
             app:layout_constraintTop_toBottomOf="@+id/num_7" />
 
         <Button
-            android:id="@+id/num_enter"
+            android:id="@+id/button_enter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -331,7 +331,7 @@
             android:text="@string/num_enter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/num_delete"
+            app:layout_constraintStart_toEndOf="@+id/button_delete"
             app:layout_constraintTop_toBottomOf="@+id/num_8" />
 
     </android.support.constraint.ConstraintLayout>

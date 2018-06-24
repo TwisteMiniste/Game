@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">Угадай число</string>
+    <string name="empty"></string>
     <string name="less_than_input">Загаданное число меньше вводимого</string>
     <string name="greater_than_input">Загаданное число больше вводимого</string>
-    <string name="win">Ты выиграл!</string>
+    <string name="win">Ты выиграл! Хочешь сыграть еще?</string>
     <string name="lose">Ты проиграл!</string>
     <string name="input_value">Введи число</string>
-    <string name="play_again">Хочу сыграть ещё</string>
+    <string name="play_again">Хочешь сыграть еще?</string>
     <string name="difficulty_easy">Угадай число от 1 до 100</string>
     <string name="difficulty_normal">Угадай число от 1 до 1000</string>
     <string name="difficulty_hard">Угадай число от 1 до 10000</string>
@@ -38,4 +39,9 @@
     <string name="num_0">0</string>
     <string name="num_delete">delete</string>
     <string name="num_enter">enter</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="begin_easy">Угадай число от 0 до 100</string>
+    <string name="begin_normal">Угадай число от 0 до 500</string>
+    <string name="begin_hard">Угадай число от 0 до 1000</string>
 </resources>

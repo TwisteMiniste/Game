@@ -8,6 +8,10 @@ import android.widget.Button;
 
 public class mainMenu extends AppCompatActivity {
 
+    public final int easy = 100;
+    public final int normal = 500;
+    public final int hard = 1000;
+
     Button playerSolo;
     Button playerVScomp;
     Button playerVSplayer;
@@ -27,14 +31,17 @@ public class mainMenu extends AppCompatActivity {
             case R.id.playerSolo:
                 Intent intentSolo = new Intent(this, playerSolo.class);
                 startActivity(intentSolo);
+                finish();
                 break;
             case R.id.playerVScomp:
                 Intent intentPvE = new Intent(this, playerVScomp.class);
                 startActivity(intentPvE);
+                finish();
                 break;
             case R.id.playerVSplayer:
                 Intent intentPvP = new Intent(this, playerVSplayer.class);
                 startActivity(intentPvP);
+                finish();
                 break;
         }
     }

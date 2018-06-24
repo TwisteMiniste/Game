@@ -9,13 +9,6 @@ import android.widget.TextView;
 
 public class playerVSplayer extends AppCompatActivity {
 
-    TextView tvPlayer1;
-    EditText etPlayer1;
-    Button bControl1;
-    TextView tvPlayer2;
-    EditText etPlayer2;
-    Button bControl2;
-
     int answer;
     boolean gameFinished;
 
@@ -24,19 +17,13 @@ public class playerVSplayer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.player_vs_player);
 
-        tvPlayer1 = findViewById(R.id.tvPlayer_1);
-        tvPlayer2 = findViewById(R.id.tvPlayer2);
-        etPlayer1 = findViewById(R.id.etPlayer1);
-        etPlayer2 = findViewById(R.id.etPlayer2);
-        bControl1 = findViewById(R.id.bControl1);
-        bControl2 = findViewById(R.id.bControl2);
 
         answer = (int) (Math.random() * 100);
 
         gameFinished = false;
     }
 
-    public void onClick(View v) {
+    public void onClick(View v) {/*
         if ((etPlayer1.getText().length() != 0) || (etPlayer2.getText().length() != 0)) {
             if (!gameFinished) {
                 int inp1 = Integer.parseInt(etPlayer1.getText().toString());
@@ -89,6 +76,6 @@ public class playerVSplayer extends AppCompatActivity {
                     tvPlayer2.setText(getResources().getString(R.string.player2_empty));
                 }
             }
-        }
+        }*/
     }
 }
