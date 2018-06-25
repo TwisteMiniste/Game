@@ -44,4 +44,6 @@
     <string name="begin_easy">Угадай число от 0 до 100</string>
     <string name="begin_normal">Угадай число от 0 до 500</string>
     <string name="begin_hard">Угадай число от 0 до 1000</string>
+    <string name="overflow">Слишком большое число!</string>
+    <string name="empty_field">Пустое поле!</string>
 </resources>
