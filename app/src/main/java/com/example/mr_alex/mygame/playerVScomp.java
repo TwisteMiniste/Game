@@ -26,8 +26,6 @@ public class playerVScomp extends AppCompatActivity {
         setContentView(R.layout.player_vs_comp);
 
         tvInfo = findViewById(R.id.tvInfo);
-        etInput = findViewById(R.id.editText);
-        bControl = findViewById(R.id.button);
         tvComp1 = findViewById(R.id.tvComp1);
         tvComp2 = findViewById(R.id.tvComp2);
 

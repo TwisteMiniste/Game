@@ -3,9 +3,10 @@ package com.example.mr_alex.mygame;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Spinner;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,49 +14,67 @@ public class playerSolo extends AppCompatActivity {
 
     TextView tvInfo;
     TextView tvInput;
-    Spinner difficulty;
-    Button
-    num_1,
-    num_2,
-    num_3,
-    num_4,
-    num_5,
-    num_6,
-    num_7,
-    num_8,
-    num_9,
-    num_0,
-    button_delete,
-    button_enter;
+    Button button_delete, button_enter;
+    Button button_difficulty;
 
-    int diff = 100;
+    int diff=100;
     int answer;
     boolean gameFinished;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.player_solo);
 
         tvInfo = findViewById(R.id.tvInfo);
         tvInput = findViewById(R.id.tvInput);
-        difficulty = findViewById(R.id.spin_difficulty);
-        num_1 = findViewById(R.id.num_1);
-        num_2 = findViewById(R.id.num_2);
-        num_3 = findViewById(R.id.num_3);
-        num_4 = findViewById(R.id.num_4);
-        num_5 = findViewById(R.id.num_5);
-        num_6 = findViewById(R.id.num_6);
-        num_7 = findViewById(R.id.num_7);
-        num_8 = findViewById(R.id.num_8);
-        num_9 = findViewById(R.id.num_9);
-        num_0 = findViewById(R.id.num_0);
         button_delete = findViewById(R.id.button_delete);
         button_enter = findViewById(R.id.button_enter);
+        button_difficulty = findViewById(R.id.button_difficulty);
+
+        button_difficulty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popupMenu = new PopupMenu(playerSolo.this, button_difficulty);
+                popupMenu.getMenuInflater().inflate(R.menu.difficulty_menu, popupMenu.getMenu());
+
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.easy: {
+                                diff = 100;
+                                button_difficulty.setText(getString(R.string.easy));
+                                tvInfo.setText(getString(R.string.difficulty_easy));
+                                answer = (int)(Math.random()*diff);
+                            }
+                            break;
+                            case R.id.normal: {
+                                diff = 500;
+                                button_difficulty.setText(getString(R.string.normal));
+                                tvInfo.setText(getString(R.string.difficulty_normal));
+                                answer = (int)(Math.random()*diff);
+                            }
+                            break;
+                            case R.id.hard: {
+                                diff = 1000;
+                                button_difficulty.setText(getString(R.string.hard));
+                                tvInfo.setText(getString(R.string.difficulty_hard));
+                                answer = (int)(Math.random()*diff);
+                            }
+                            break;
+                        }
+                        return true;
+                    }
+                });
+                popupMenu.show();
+            }
+        });
 
         answer = (int)(Math.random()*diff);
 
-        tvInfo.setText(getResources().getString(R.string.app_name));
+        button_difficulty.setText(getString(R.string.easy));
+        tvInfo.setText(getResources().getString(R.string.difficulty_easy));
 
         gameFinished = false;
     }
