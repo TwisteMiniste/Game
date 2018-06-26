@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,12 +15,9 @@ public class playerVSplayer extends AppCompatActivity {
 
     TextView tvPlayer_1, tvPlayer_2;
     TextView etPlayer_1, etPlayer_2;
-    Button
-            button_delete,
-            button_enter;
-    Button
-            button_delete_,
-            button_enter_;
+    Button button_delete, button_enter;
+    Button button_delete_, button_enter_;
+    Button button_difficulty, button_difficulty_;
 
     int diff = 100;
     int answer;
@@ -38,6 +37,94 @@ public class playerVSplayer extends AppCompatActivity {
         button_enter = findViewById(R.id.button_enter);
         button_delete_ = findViewById(R.id.button_delete_);
         button_enter_ = findViewById(R.id.button_enter_);
+        button_difficulty = findViewById(R.id.button_difficulty);
+        button_difficulty_ = findViewById(R.id.button_difficulty_);
+
+        button_difficulty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popupMenu = new PopupMenu(playerVSplayer.this, button_difficulty);
+                popupMenu.getMenuInflater().inflate(R.menu.difficulty_menu, popupMenu.getMenu());
+
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.easy: {
+                                diff = 100;
+                                button_difficulty.setText(getString(R.string.easy));
+                                tvPlayer_1.setText(getString(R.string.difficulty_easy));
+                                tvPlayer_2.setText(getString(R.string.difficulty_easy));
+                                answer = (int)(Math.random()*diff+1);
+                            }
+                            break;
+                            case R.id.normal: {
+                                diff = 500;
+                                button_difficulty.setText(getString(R.string.normal));
+                                tvPlayer_1.setText(getString(R.string.difficulty_normal));
+                                tvPlayer_2.setText(getString(R.string.difficulty_normal));
+                                answer = (int)(Math.random()*diff+1);
+                            }
+                            break;
+                            case R.id.hard: {
+                                diff = 1000;
+                                button_difficulty.setText(getString(R.string.hard));
+                                tvPlayer_1.setText(getString(R.string.difficulty_hard));
+                                tvPlayer_2.setText(getString(R.string.difficulty_hard));
+                                answer = (int)(Math.random()*diff+1);
+                            }
+                            break;
+                        }
+                        return true;
+                    }
+                });
+
+                popupMenu.show();
+            }
+        });
+
+        button_difficulty_.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popupMenu = new PopupMenu(playerVSplayer.this, button_difficulty_);
+                popupMenu.getMenuInflater().inflate(R.menu.difficulty_menu, popupMenu.getMenu());
+
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.easy: {
+                                diff = 100;
+                                button_difficulty_.setText(getString(R.string.easy));
+                                tvPlayer_1.setText(getString(R.string.difficulty_easy));
+                                tvPlayer_2.setText(getString(R.string.difficulty_easy));
+                                answer = (int)(Math.random()*diff);
+                            }
+                            break;
+                            case R.id.normal: {
+                                diff = 500;
+                                button_difficulty_.setText(getString(R.string.normal));
+                                tvPlayer_1.setText(getString(R.string.difficulty_normal));
+                                tvPlayer_2.setText(getString(R.string.difficulty_normal));
+                                answer = (int)(Math.random()*diff);
+                            }
+                            break;
+                            case R.id.hard: {
+                                diff = 1000;
+                                button_difficulty_.setText(getString(R.string.hard));
+                                tvPlayer_1.setText(getString(R.string.difficulty_hard));
+                                tvPlayer_2.setText(getString(R.string.difficulty_hard));
+                                answer = (int)(Math.random()*diff);
+                            }
+                            break;
+                        }
+                        return true;
+                    }
+                });
+
+                popupMenu.show();
+            }
+        });
 
         answer = (int)(Math.random()*diff);
 
