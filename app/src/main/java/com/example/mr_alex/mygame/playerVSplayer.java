@@ -98,7 +98,7 @@ public class playerVSplayer extends AppCompatActivity {
                                 button_difficulty_.setText(getString(R.string.easy));
                                 tvPlayer_1.setText(getString(R.string.difficulty_easy));
                                 tvPlayer_2.setText(getString(R.string.difficulty_easy));
-                                answer = (int)(Math.random()*diff);
+                                answer = (int)(Math.random()*diff+1);
                             }
                             break;
                             case R.id.normal: {
@@ -106,7 +106,7 @@ public class playerVSplayer extends AppCompatActivity {
                                 button_difficulty_.setText(getString(R.string.normal));
                                 tvPlayer_1.setText(getString(R.string.difficulty_normal));
                                 tvPlayer_2.setText(getString(R.string.difficulty_normal));
-                                answer = (int)(Math.random()*diff);
+                                answer = (int)(Math.random()*diff+1);
                             }
                             break;
                             case R.id.hard: {
@@ -114,7 +114,7 @@ public class playerVSplayer extends AppCompatActivity {
                                 button_difficulty_.setText(getString(R.string.hard));
                                 tvPlayer_1.setText(getString(R.string.difficulty_hard));
                                 tvPlayer_2.setText(getString(R.string.difficulty_hard));
-                                answer = (int)(Math.random()*diff);
+                                answer = (int)(Math.random()*diff+1);
                             }
                             break;
                         }
@@ -126,7 +126,7 @@ public class playerVSplayer extends AppCompatActivity {
             }
         });
 
-        answer = (int)(Math.random()*diff);
+        answer = (int)(Math.random()*diff+1);
 
         tvPlayer_1.setText(getString(R.string.app_name));
         tvPlayer_2.setText(getString(R.string.app_name));
@@ -295,7 +295,7 @@ public class playerVSplayer extends AppCompatActivity {
     }
 
     private void playagain_yes () {
-        answer = (int) (Math.random() * diff);
+        answer = (int) (Math.random() * diff+1);
 
         tvPlayer_1.setText(getString(R.string.app_name));
         button_delete.setText(getString(R.string.num_delete));
@@ -308,8 +308,8 @@ public class playerVSplayer extends AppCompatActivity {
     }
 
         private void playagain_no () {
-            Intent mainMenu = new Intent(this, mainMenu.class);
-            startActivity(mainMenu);
+         /*  Intent mainMenu = new Intent(this, mainMenu.class);
+            startActivity(mainMenu);*/
             finish();
         }
 

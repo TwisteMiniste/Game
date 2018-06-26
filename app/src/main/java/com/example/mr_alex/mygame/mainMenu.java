@@ -31,17 +31,17 @@ public class mainMenu extends AppCompatActivity {
             case R.id.playerSolo:
                 Intent intentSolo = new Intent(this, playerSolo.class);
                 startActivity(intentSolo);
-                finish();
+              //  finish();
                 break;
             case R.id.playerVScomp:
                 Intent intentPvE = new Intent(this, playerVScomp.class);
                 startActivity(intentPvE);
-                finish();
+              //  finish();
                 break;
             case R.id.playerVSplayer:
                 Intent intentPvP = new Intent(this, playerVSplayer.class);
                 startActivity(intentPvP);
-                finish();
+             //   finish();
                 break;
         }
     }

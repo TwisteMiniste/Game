@@ -46,21 +46,21 @@ public class playerSolo extends AppCompatActivity {
                                 diff = 100;
                                 button_difficulty.setText(getString(R.string.easy));
                                 tvInfo.setText(getString(R.string.difficulty_easy));
-                                answer = (int)(Math.random()*diff);
+                                answer = (int)(Math.random()*diff+1);
                             }
                             break;
                             case R.id.normal: {
                                 diff = 500;
                                 button_difficulty.setText(getString(R.string.normal));
                                 tvInfo.setText(getString(R.string.difficulty_normal));
-                                answer = (int)(Math.random()*diff);
+                                answer = (int)(Math.random()*diff+1);
                             }
                             break;
                             case R.id.hard: {
                                 diff = 1000;
                                 button_difficulty.setText(getString(R.string.hard));
                                 tvInfo.setText(getString(R.string.difficulty_hard));
-                                answer = (int)(Math.random()*diff);
+                                answer = (int)(Math.random()*diff+1);
                             }
                             break;
                         }
@@ -71,7 +71,7 @@ public class playerSolo extends AppCompatActivity {
             }
         });
 
-        answer = (int)(Math.random()*diff);
+        answer = (int)(Math.random()*diff+1);
 
         button_difficulty.setText(getString(R.string.easy));
         tvInfo.setText(getResources().getString(R.string.difficulty_easy));
@@ -159,12 +159,12 @@ public class playerSolo extends AppCompatActivity {
         if (strInput.length() <= 6) {
             tvInput.setText(strInput);
         } else {
-            Toast.makeText(this,"Слишком большое число!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,getString(R.string.overflow), Toast.LENGTH_SHORT).show();
         }
     }
 
     private void playagain_yes () {
-        answer = (int) (Math.random() * diff);
+        answer = (int) (Math.random() * diff+1);
 
         tvInfo.setText(getResources().getString(R.string.app_name));
         button_delete.setText(getResources().getString(R.string.num_delete));
@@ -174,8 +174,8 @@ public class playerSolo extends AppCompatActivity {
     }
 
     private void playagain_no () {
-        Intent mainMenu = new Intent(this, mainMenu.class);
-        startActivity(mainMenu);
+      /*  Intent mainMenu = new Intent(this, mainMenu.class);
+        startActivity(mainMenu);*/
         finish();
     }
 
@@ -201,6 +201,6 @@ public class playerSolo extends AppCompatActivity {
                     button_enter.setText(getResources().getString(R.string.yes));
                 }
             }
-        } else {Toast.makeText(this,"Пустое поле!", Toast.LENGTH_SHORT).show();}
+        } else {Toast.makeText(this,getString(R.string.empty_field), Toast.LENGTH_SHORT).show();}
     }
 }
