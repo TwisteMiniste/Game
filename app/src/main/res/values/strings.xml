@@ -48,8 +48,8 @@
     <string name="num_9">9</string>
     <string name="num_0">0</string>
 
-    <string name="num_delete">delete</string>
-    <string name="num_enter">enter</string>
+    <string name="num_delete">C</string>
+    <string name="num_enter">E</string>
 
     <string name="yes">Да</string>
     <string name="no">Нет</string>
@@ -64,4 +64,5 @@
     <string name="player_solo">ОДИН ИГРОК</string>
     <string name="player_ai">ИГРОК ПРОТИВ ИИ</string>
     <string name="pvp">ИГРОК ПРОТИВ ИГРОКА</string>
+    <string name="settings">Настройки</string>
 </resources>
