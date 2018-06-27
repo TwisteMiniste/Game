@@ -1,6 +1,5 @@
 package com.example.mr_alex.mygame;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -23,6 +22,14 @@ public class playerVSplayer extends AppCompatActivity {
     int answer;
     boolean gameFinished;
 
+    private static final int
+            DIFFICULTY_EASY = 0,
+            DIFFICULTY_NORMAL = 1,
+            DIFFICULTY_HARD = 2,
+            DIFFICULTY_IMPOSSIBLE = 3;
+
+    private static int DIFFICULTY = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,96 +47,10 @@ public class playerVSplayer extends AppCompatActivity {
         button_difficulty = findViewById(R.id.button_difficulty);
         button_difficulty_ = findViewById(R.id.button_difficulty_);
 
-        button_difficulty.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopupMenu popupMenu = new PopupMenu(playerVSplayer.this, button_difficulty);
-                popupMenu.getMenuInflater().inflate(R.menu.difficulty_menu, popupMenu.getMenu());
-
-                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.easy: {
-                                diff = 100;
-                                button_difficulty.setText(getString(R.string.easy));
-                                tvPlayer_1.setText(getString(R.string.difficulty_easy));
-                                tvPlayer_2.setText(getString(R.string.difficulty_easy));
-                                answer = (int)(Math.random()*diff+1);
-                            }
-                            break;
-                            case R.id.normal: {
-                                diff = 500;
-                                button_difficulty.setText(getString(R.string.normal));
-                                tvPlayer_1.setText(getString(R.string.difficulty_normal));
-                                tvPlayer_2.setText(getString(R.string.difficulty_normal));
-                                answer = (int)(Math.random()*diff+1);
-                            }
-                            break;
-                            case R.id.hard: {
-                                diff = 1000;
-                                button_difficulty.setText(getString(R.string.hard));
-                                tvPlayer_1.setText(getString(R.string.difficulty_hard));
-                                tvPlayer_2.setText(getString(R.string.difficulty_hard));
-                                answer = (int)(Math.random()*diff+1);
-                            }
-                            break;
-                        }
-                        return true;
-                    }
-                });
-
-                popupMenu.show();
-            }
-        });
-
-        button_difficulty_.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopupMenu popupMenu = new PopupMenu(playerVSplayer.this, button_difficulty_);
-                popupMenu.getMenuInflater().inflate(R.menu.difficulty_menu, popupMenu.getMenu());
-
-                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.easy: {
-                                diff = 100;
-                                button_difficulty_.setText(getString(R.string.easy));
-                                tvPlayer_1.setText(getString(R.string.difficulty_easy));
-                                tvPlayer_2.setText(getString(R.string.difficulty_easy));
-                                answer = (int)(Math.random()*diff+1);
-                            }
-                            break;
-                            case R.id.normal: {
-                                diff = 500;
-                                button_difficulty_.setText(getString(R.string.normal));
-                                tvPlayer_1.setText(getString(R.string.difficulty_normal));
-                                tvPlayer_2.setText(getString(R.string.difficulty_normal));
-                                answer = (int)(Math.random()*diff+1);
-                            }
-                            break;
-                            case R.id.hard: {
-                                diff = 1000;
-                                button_difficulty_.setText(getString(R.string.hard));
-                                tvPlayer_1.setText(getString(R.string.difficulty_hard));
-                                tvPlayer_2.setText(getString(R.string.difficulty_hard));
-                                answer = (int)(Math.random()*diff+1);
-                            }
-                            break;
-                        }
-                        return true;
-                    }
-                });
-
-                popupMenu.show();
-            }
-        });
-
         answer = (int)(Math.random()*diff+1);
 
-        tvPlayer_1.setText(getString(R.string.app_name));
-        tvPlayer_2.setText(getString(R.string.app_name));
+        tvPlayer_1.setText(R.string.begin_easy);
+        tvPlayer_2.setText(R.string.begin_easy);
 
         gameFinished = false;
     }
@@ -228,13 +149,13 @@ public class playerVSplayer extends AppCompatActivity {
                 if (!gameFinished) {
                     etPlayer_1.setText(R.string.empty);
                 } else {
-                    playagain_no();
+                    finish();
                 }
             }
             break;
             case R.id.button_enter: {
                 if (!gameFinished) {
-                    compare1(etPlayer_1.getText().toString());
+                    checkPlayerInput1();
                     etPlayer_1.setText(R.string.empty);
                 } else {
                     playagain_yes();
@@ -245,13 +166,13 @@ public class playerVSplayer extends AppCompatActivity {
                 if (!gameFinished) {
                     etPlayer_2.setText(R.string.empty);
                 } else {
-                    playagain_no();
+                    finish();
                 }
             }
             break;
             case R.id.button_enter_: {
                 if (!gameFinished) {
-                    compare2(etPlayer_2.getText().toString());
+                    checkPlayerInput2();
                     etPlayer_2.setText(R.string.empty);
                 } else {
                     playagain_yes();
@@ -272,7 +193,7 @@ public class playerVSplayer extends AppCompatActivity {
         if (strInput.length() <= 6) {
             etPlayer_1.setText(strInput);
         } else {
-            Toast.makeText(this,getString(R.string.overflow), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,R.string.overflow, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -286,7 +207,7 @@ public class playerVSplayer extends AppCompatActivity {
         if (strInput.length() <= 6) {
             etPlayer_2.setText(strInput);
         } else {
-            Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.overflow), Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(getApplicationContext(), R.string.overflow, Toast.LENGTH_LONG);
             View toastView = toast.getView();
             toastView.setRotation(180);
             toast.setGravity(Gravity.TOP, 0, 0);
@@ -297,81 +218,133 @@ public class playerVSplayer extends AppCompatActivity {
     private void playagain_yes () {
         answer = (int) (Math.random() * diff+1);
 
-        tvPlayer_1.setText(getString(R.string.app_name));
+        switch (DIFFICULTY){
+            case DIFFICULTY_EASY: {
+                tvPlayer_1.setText(R.string.difficulty_easy);
+                tvPlayer_2.setText(R.string.difficulty_easy);
+            } break;
+            case DIFFICULTY_NORMAL: {
+                tvPlayer_1.setText(R.string.difficulty_normal);
+                tvPlayer_2.setText(R.string.difficulty_normal);
+            } break;
+            case DIFFICULTY_HARD: {
+                tvPlayer_1.setText(R.string.difficulty_hard);
+                tvPlayer_2.setText(R.string.difficulty_hard);
+            } break;
+            case DIFFICULTY_IMPOSSIBLE: {
+                tvPlayer_1.setText(R.string.difficulty_impossible);
+                tvPlayer_2.setText(R.string.difficulty_impossible);
+            } break;
+            default: break;
+        }
         button_delete.setText(getString(R.string.num_delete));
         button_enter.setText(getString(R.string.num_enter));
-        tvPlayer_2.setText(getString(R.string.app_name));
         button_delete_.setText(getString(R.string.num_delete));
         button_enter_.setText(getString(R.string.num_enter));
 
         gameFinished = false;
     }
 
-        private void playagain_no () {
-         /*  Intent mainMenu = new Intent(this, mainMenu.class);
-            startActivity(mainMenu);*/
-            finish();
-        }
-
-
-    private void compare1 (String str) {
+    private void checkPlayerInput1() {
         if (!etPlayer_1.getText().toString().equals("")) {
-            if (!gameFinished) {
-                int inp = Integer.parseInt(str);
-
-                if (inp > answer) {
-                    tvPlayer_1.setText(getString(R.string.less_than_input));
-                }
-
-                if (inp < answer) {
-                    tvPlayer_1.setText(getString(R.string.greater_than_input));
-                }
-
-                if (inp == answer) {
-                    tvPlayer_1.setText(getString(R.string.player1_win));
-                    tvPlayer_2.setText(getString(R.string.player2_lose));
-
-                    setGameFinished();
-                }
+            int inp = Integer.parseInt(etPlayer_1.getText().toString());
+            if (inp < answer) {
+                tvPlayer_1.setText(R.string.greater_than_input);
+            } else if (inp > answer) {
+                tvPlayer_1.setText(R.string.less_than_input);
+            } else {
+                gameFinished = true;
+                tvPlayer_1.setText(R.string.player1_win);
+                tvPlayer_2.setText(R.string.player2_lose);
+                setGameFinished();
             }
         } else {
-            Toast.makeText(this, getString(R.string.empty_field), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.empty_field, Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void compare2 (String str){
+    private void checkPlayerInput2() {
         if (!etPlayer_2.getText().toString().equals("")) {
-            if (!gameFinished) {
-                int inp = Integer.parseInt(str);
-
-                if (inp > answer) {
-                    tvPlayer_2.setText(getString(R.string.less_than_input));
-                }
-
-                if (inp < answer) {
-                    tvPlayer_2.setText(getString(R.string.greater_than_input));
-                }
-
-                if (inp == answer) {
-                    tvPlayer_2.setText(getString(R.string.player2_win));
-                    tvPlayer_1.setText(getString(R.string.player1_lose));
-
-                    setGameFinished();
-                }
+            int inp = Integer.parseInt(etPlayer_2.getText().toString());
+            if (inp < answer) {
+                tvPlayer_2.setText(R.string.greater_than_input);
+            } else if (inp > answer) {
+                tvPlayer_2.setText(R.string.less_than_input);
+            } else {
+                gameFinished = true;
+                tvPlayer_2.setText(R.string.player1_win);
+                tvPlayer_1.setText(R.string.player2_lose);
+                setGameFinished();
             }
-        } else {Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.empty_field), Toast.LENGTH_LONG);
-            View toastView = toast.getView();
-            toastView.setRotation(180);
-            toast.setGravity(Gravity.TOP, 0, 0);
-            toast.show();}
+        } else {
+            {Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.empty_field), Toast.LENGTH_LONG);
+                View toastView = toast.getView();
+                toastView.setRotation(180);
+                toast.setGravity(Gravity.TOP, 0, 0);
+                toast.show();}
+        }
     }
 
     private void setGameFinished (){
-        button_delete_.setText(getString(R.string.no));
-        button_enter_.setText(getString(R.string.yes));
-        button_delete.setText(getString(R.string.no));
-        button_enter.setText(getString(R.string.yes));
 
-        gameFinished = true;
+        button_delete.setText(R.string.no);
+        button_delete_.setText(R.string.no);
+        button_enter.setText(R.string.yes);
+        button_enter_.setText(R.string.yes);
+    }
+
+    public void openPopupmenu (View view){
+        PopupMenu popupMenu = new PopupMenu(this, view);
+        popupMenu.inflate(R.menu.difficulty_menu);
+ /*
+        if (view.getId() == R.id.button_difficulty_) {
+            popupMenu.
+        }
+*/
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.easy: {
+                        DIFFICULTY = DIFFICULTY_EASY;
+                        diff = 100;
+                        button_difficulty.setText(R.string.easy);
+                        button_difficulty_.setText(R.string.easy);
+                        tvPlayer_1.setText(R.string.difficulty_easy);
+                        tvPlayer_2.setText(R.string.difficulty_easy);
+                        answer = (int)(Math.random()*diff+1);
+                    } break;
+                    case R.id.normal: {
+                        DIFFICULTY = DIFFICULTY_NORMAL;
+                        diff = 500;
+                        button_difficulty.setText(R.string.normal);
+                        button_difficulty_.setText(R.string.easy);
+                        tvPlayer_1.setText(R.string.difficulty_normal);
+                        tvPlayer_2.setText(R.string.difficulty_normal);
+                        answer = (int)(Math.random()*diff+1);
+                    } break;
+                    case R.id.hard: {
+                        DIFFICULTY = DIFFICULTY_HARD;
+                        diff = 1000;
+                        button_difficulty.setText(R.string.hard);
+                        button_difficulty_.setText(R.string.easy);
+                        tvPlayer_1.setText(R.string.difficulty_hard);
+                        tvPlayer_2.setText(R.string.difficulty_hard);
+                        answer = (int)(Math.random()*diff+1);
+                    } break;
+                    case R.id.impossible: {
+                        DIFFICULTY = DIFFICULTY_IMPOSSIBLE;
+                        diff = 999999;
+                        button_difficulty.setText(R.string.impossible);
+                        button_difficulty_.setText(R.string.easy);
+                        tvPlayer_1.setText(R.string.difficulty_impossible);
+                        tvPlayer_2.setText(R.string.difficulty_impossible);
+                        answer = (int)(Math.random()*diff+1);
+                    } break;
+                }
+                return true;
+            }
+        });
+        popupMenu.show();
     }
 }

@@ -15,6 +15,7 @@
         android:layout_marginLeft="33dp"
         android:layout_marginRight="33dp"
         android:layout_marginStart="33dp"
+        android:onClick="openPopupmenu"
         app:layout_constraintBottom_toTopOf="@+id/tvInfo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +31,7 @@
         android:layout_marginRight="33dp"
         android:layout_marginStart="33dp"
         android:layout_marginTop="8dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_difficulty" />
