@@ -32,10 +32,10 @@
     <string name="player1_lose">Ты проигал! Взять реванш?</string>
     <string name="player2_lose">Ты проигал! Взять реванш?</string>
 
-    <string name="easy">easy</string>
-    <string name="normal">normal</string>
-    <string name="hard">hard</string>
-    <string name="impossible">impossible</string>
+    <string name="easy">Легко</string>
+    <string name="normal">Нормально</string>
+    <string name="hard">Тяжело</string>
+    <string name="impossible">Невозможно</string>
 
     <string name="num_1">1</string>
     <string name="num_2">2</string>
@@ -49,10 +49,10 @@
     <string name="num_0">0</string>
 
     <string name="num_delete">C</string>
-    <string name="num_enter">→</string>
+    <string name="num_enter">►</string>
 
-    <string name="yes">Да</string>
-    <string name="no">Нет</string>
+    <string name="yes">✓</string>
+    <string name="no">✗</string>
 
     <string name="begin_easy">Угадай число от 0 до 100</string>
     <string name="begin_normal">Угадай число от 0 до 500</string>

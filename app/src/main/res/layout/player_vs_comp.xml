@@ -324,7 +324,6 @@
             android:translationZ="4dp"
             android:gravity="center"
             android:onClick="onClick"
-            android:paddingBottom="14sp"
             android:scaleX="1.5"
             android:scaleY="1.5"
             android:text="@string/num_enter"
