@@ -156,6 +156,8 @@ public class playerVScomp extends AppCompatActivity {
 
         button_delete.setText(R.string.num_delete);
         button_enter.setText(R.string.num_enter);
+        tvComp1.setText(R.string.empty);
+        tvComp2.setText(R.string.empty);
 
         gameFinished = false;
     }

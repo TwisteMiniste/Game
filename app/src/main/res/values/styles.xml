@@ -8,4 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MenuBackground" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:windowBackground">@color/colorBackground</item>
+    </style>
 </resources>
